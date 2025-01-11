@@ -52,6 +52,7 @@ const capturePayment = async (req, res) => {
     amount,
     currency,
     orderId,
+    instagram,
   } = req.body;
 
   // Validate input
@@ -65,14 +66,14 @@ const capturePayment = async (req, res) => {
     !currency ||
     !orderId
   ) {
-    return res.status(400).json({ message: "All fields are required." });
+    return res.status(400).json({ message: "all fields are required" });
   }
 
   try {
     // Check if dance class exists
     const danceClassFound = await DanceClass.findById(danceClass);
     if (!danceClassFound) {
-      return res.status(404).json({ message: "Dance class not found." });
+      return res.status(404).json({ message: "dance class not found" });
     }
 
     // Validate ticket availability
@@ -86,6 +87,7 @@ const capturePayment = async (req, res) => {
       email,
       phoneNumber,
       ticketQuantity,
+      instagram,
     });
     await newPurchaseTicket.save();
 
@@ -118,11 +120,11 @@ const capturePayment = async (req, res) => {
         id: capture.result.id,
       });
     } else {
-      return res.status(400).json({ message: "Payment capture failed." });
+      return res.status(400).json({ message: "payment capture failed" });
     }
   } catch (error) {
     console.error("Error capturing payment:", error.message);
-    res.status(500).json({ message: "Internal server error." });
+    return res.status(500).json({ message: "internal server error" });
   }
 };
 

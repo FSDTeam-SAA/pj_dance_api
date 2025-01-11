@@ -15,6 +15,8 @@ const stripSecret = process.env.STRIPE_SECRET_KEY;
 const paypalClientId = process.env.PAYPAL_CLIENT_ID;
 const paypalCleintSecret = process.env.PAYPAL_CLIENT_SECRET;
 
+const frontendBaseUrl = process.env.FRONTEND_BASE_URL;
+
 export {
   serverPort,
   mongodbUri,
@@ -26,4 +28,5 @@ export {
   stripSecret,
   paypalClientId,
   paypalCleintSecret,
+  frontendBaseUrl,
 };

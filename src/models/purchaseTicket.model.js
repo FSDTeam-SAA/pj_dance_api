@@ -18,6 +18,9 @@ const purchaseTicketSchema = new Schema(
     ticketQuantity: {
       type: Number,
     },
+    instagram: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

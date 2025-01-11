@@ -9,16 +9,14 @@ import configDb from "./db/configDb.js";
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "*",
-    methods: "GET,POST,PUT,DELETE",
-  })
-);
-
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 // routes
 app.use("/api/v1/users", userRouter);

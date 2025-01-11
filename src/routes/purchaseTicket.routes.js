@@ -1,8 +1,5 @@
 import { Router } from "express";
-import {
-  buyTicketWithStripe,
-  purchaseTicket,
-} from "../controllers/purchaseTicket.controller.js";
+import { purchaseTicket } from "../controllers/purchaseTicket.controller.js";
 import {
   capturePayment,
   createPayment,
@@ -10,8 +7,7 @@ import {
 
 const router = Router();
 
-router.route("/").post(purchaseTicket);
-router.post("/stripe", buyTicketWithStripe);
+router.route("/stripe").post(purchaseTicket);
 router.post("/paypal", createPayment);
 router.post("/paypal-capture", capturePayment);
 
