@@ -8,7 +8,7 @@ import {
 const router = Router();
 
 router.route("/stripe").post(purchaseTicket);
-router.post("/paypal", createPayment);
+// router.post("/paypal", createPayment);
 router.post("/paypal-capture", capturePayment);
 
 export default router;
