@@ -19,6 +19,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.3",
     "nodemailer": "^6.9.16",
-    "stripe": "^17.5.0"
+    "stripe": "^17.5.0",
+    "vercel": "^39.3.0"
   }
 }
