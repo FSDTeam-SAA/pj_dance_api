@@ -18,6 +18,10 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 // routes
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/dance-classes", danClassRouter);
